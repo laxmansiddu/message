@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="message.css">
+    <style>
+       
+
+        
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Text the Message</h2>
+        <hr>
+        <label for="message-input">type a Message</label><br><br>
+        <label>✉️</label>
+        <input type="text" name="message-input" id="message-input" placeholder="type your message">
+        <div class="buttons">
+            <button onclick="getMessage()">Submit</button>
+            <button onclick="resetMessage()">Reset</button>
+        </div>
+        <p id="message-output"></p>
+    </div>
+
+    <script>
+        const messageInput = document.getElementById("message-input");
+        const messageOutput = document.getElementById("message-output");
+
+        function getMessage() {
+            const message = messageInput.value;
+            if (message) {
+                messageOutput.textContent = message;
+                messageInput.value = "";
+            }
+        }
+
+        function resetMessage() {
+            messageOutput.textContent = "";
+            messageInput.value = "";
+        }
+    </script>
+</body>
+
+</html>
